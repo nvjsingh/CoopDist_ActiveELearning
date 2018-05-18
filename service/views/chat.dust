@@ -1,0 +1,60 @@
+{>"layout" /}
+
+{<body}
+    <br/>
+    <br/>
+    <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#selectTopicModal">
+        Create Chat Room
+    </button>
+    <br/>
+    My Topics:
+    {#topics}
+        <div class="card card-block bg-faded" style="width: 18rem;">
+            <h4>{t_ids}{.}</h4>
+        </div>
+    {/topics}
+    <br/>
+    My Groups:
+    {#groups}
+        <div class="card card-block" style="width: 18rem;">
+            <button type="button" class="btn btn-gid groupButton" style="background: DodgerBlue; color: White;" id="{gid}">
+                {gname}
+            </button>
+        </div>
+    {/groups}
+    <!-- Select Topic Modal-->
+    <div class="modal fade" id="selectTopicModal" tabindex="-1" role="dialog" aria-labelledby="SelectTopicModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <form method="" action="" id="formselecttopic">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Select Topic</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label>Chat Rooom Name</label>
+                            <input type="text" class="form-control" name="gname" id="grpname" required/>
+                        </div>
+                        <label>Topics</label>
+                        <div class="form-group">
+                            <div class="checkbox">
+                                {#topics}
+                                    <label><input type="radio" name="topicselect" checked="checked" value="{t_ids}{.}"/>
+                                        {t_ids}{.}
+                                    </label><br/>
+                                {/topics}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <input type="submit" class="btn btn-primary" id="gTopicSubmit" value="Next" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- Select Member Modal-->
+    {>"chatCreateModal" /}
+{/body}

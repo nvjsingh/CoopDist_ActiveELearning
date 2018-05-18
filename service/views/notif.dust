@@ -1,0 +1,28 @@
+{>"layout" /}
+
+{<body}
+    <br/>
+
+    <table style="width:100%">
+        <tr>
+            <th>Notifications: </th>
+        </tr>
+        {#notifs}
+            <tr>
+                <td>
+                    {notif_txt}
+                    <form action="/notifbtn" method="post">
+                        <button class="btn btn-gid notifbtn" type="submit" name="event" value="accept {notif_id}" style="background: DodgerBlue; color: White;">
+                            Accept
+                        </button>
+                        <button class="btn btn-gid notifbtn" type="submit" name="event" value="reject {notif_id}" style="background: DodgerBlue; color: White;">
+                            Reject
+                        </button>
+                    </form>
+                </td>
+                <!--<td><input type="submit" id="join" value="join" name="join"/> </td>-->
+            </tr>
+
+        {/notifs}
+    </table>
+{/body}⁠⁠⁠⁠

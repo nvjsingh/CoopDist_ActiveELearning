@@ -1,0 +1,15 @@
+{>"layout" /}
+
+        {<body}
+        Share<br/>
+        <br/>
+        Choose a group to share with:<br/>
+        My Groups:
+        {#groups}
+            <div class="card card-block" style="width: 18rem;">
+                <button type="button" class="btn btn-gid groupButton" style="background: DodgerBlue; color: White;" id="{gid}">
+                    {gname}
+                </button>
+            </div>
+        {/groups}
+        {/body}

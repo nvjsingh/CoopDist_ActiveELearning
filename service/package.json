@@ -1,0 +1,29 @@
+{
+  "name": "service",
+  "version": "1.0.0",
+  "description": "nodejs db service",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nvjsingh/CoopDist_ActiveELearning.git"
+  },
+  "author": "Navjot",
+  "license": "MIT",
+  "homepage": "https://github.com/nvjsingh/CoopDist_ActiveELearning.git",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "client-sessions": "^0.8.0",
+    "consolidate": "^0.14.5",
+    "dust": "^0.3.0",
+    "dustjs-helpers": "^1.7.3",
+    "dustjs-linkedin": "^2.7.5",
+    "express": "^4.15.4",
+    "node-ipc": "^9.1.0",
+    "node-notifier": "^5.1.2",
+    "pg": "^7.1.2",
+    "socket.io": "^2.0.3"
+  }
+}

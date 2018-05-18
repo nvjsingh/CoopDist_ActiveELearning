@@ -1,0 +1,66 @@
+{>"layout" /}
+
+{<body}
+    <br/>
+    <a class="btn chatbtn" href="chat"  style="color:white; background: DodgerBlue ;">Back</a>
+    {#exit}
+        <a class="btn chatbtn" href="{exittype}"  style="color:white; background: DodgerBlue ;">{exitstr}</a>
+    {/exit}
+    <br/>
+    <br/>
+
+    {#group}
+        <div id="hiddengid" style="display: none;">{gid}</div>
+    {/group}
+
+    <div id="chatcontainer">
+        <div id="mainWrapper">
+            <div id="chatWrapper">
+                <div id="chatWindow"></div>
+                <form id="messageForm">
+                    <input type="text" size="35" id="message" name="chatmsg" placeholder="Say Something...">
+                    <input type="submit" value="send" id="messagesend">
+                </form>
+            </div>
+
+            <div id="userWrapper">
+                <h3>Online</h3>
+                <div id="users"></div>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div>
+        <button type="button" class="btn btn-primary" id="chatshare" data-toggle="modal" data-target="#shareLinkModal">
+            Share
+        </button>
+    </div>
+
+    <!-- Share link -->
+    <div class="modal fade" id="shareLinkModal" tabindex="-1" role="dialog" aria-labelledby="shareLinkLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <form method="" action="" id="formShareLink">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Share</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label>Share link</label>
+                            <input type="text" class="form-control" name="link" id="linkmsg" required/>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <input type="submit" class="btn btn-primary" id="linksubmit" value="Share" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/chat.js"></script>
+
+{/body}

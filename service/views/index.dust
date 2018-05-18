@@ -1,0 +1,26 @@
+{>"layoutindex" /}
+
+{<body}
+    <div class="container row">
+        <div class="jumbotron col-sm-4 pull-center">
+            <form action="/signin" method="post">
+                <div>
+                    <label>UUID:</label>
+                    <input type="text" class="form-control" name="loginid"/>
+                </div>
+                <br/>
+                <div>
+                    <input type="submit" class="btn btn-primary " value="Sign In" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- <div id="browse_app">
+    <a class="btn btn-large btn-info" href="adminpage">Login</a>
+    </div>
+    <div id="browse_app">
+    <a class="btn btn-large btn-info" href="user">User</a>
+    </div> -->
+
+{/body}

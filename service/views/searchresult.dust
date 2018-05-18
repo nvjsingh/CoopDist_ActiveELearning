@@ -1,0 +1,107 @@
+{>"layout" /}
+
+{<body}
+    <br/>
+    <table style="width:100%">
+        <tr>
+            <th>Users with same interest:</th>
+        </tr>
+        <tr>
+            <div id="topicid">
+
+            </div>
+        </tr>
+        {#userlocal}
+            <tr>
+                <td>{uuid} {users}</td>
+            </tr>
+        {/userlocal}
+    </table>
+    <br/>
+    <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#queryCreateRoom">
+        Create Chat Room
+    </button>
+
+    <br/>
+    <br/>
+    <table style="width:100%">
+        <tr>
+            <th>Courses Available:</th>
+            <th>Course URL:</th>
+        </tr>
+
+        {#courses}
+            <tr>
+                <td>
+                    {c_name}
+                </td>
+                <td>
+                    <a href="{c_url}">{c_url}</a>
+                </td>
+            </tr>
+        {/courses}
+    </table>
+
+    <br/>
+    <br/>
+
+
+    <table style="width:100%">
+        <tr>
+            <th>Groups you can be a member of</th>
+        </tr>
+        {#mygroups}
+            <tr>
+                <td>
+                    {gname}
+
+                </td>
+                <td>
+                    <form method="post" action="/reqjoin">
+                    <button class="btn btn-gid notifbtn" type="submit" name="join" value="{g_id}" style="background: DodgerBlue; color: White;">
+                        Join
+                    </button>
+                    </form>
+                </td>
+            </tr>
+
+        {/mygroups}
+    </table>
+
+    <div class="modal fade" id="queryCreateRoom" tabindex="-1" role="dialog" aria-labelledby="SelectMemberModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <form method="post" action="/querycreategroup">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Select Member</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label>Topic</label><br/>
+                            {#topic}
+                                <input type="text" name="tid_gp" value="{tid}" readonly>
+                            {/topic}
+                        </div>
+                        <div class="form-group">
+                            <label>Chat Rooom Name</label>
+                            <input type="text" class="form-control" name="gname" id="grpname" required/>
+                        </div>
+                        <label>Members</label>
+                        <div class="form-group">
+                            <div class="checkbox">
+                                {#userlocal}
+                                    <label><input type="checkbox" name="memberselect" value="{uuid}"/> {users}</label><br/>
+                                {/userlocal}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <input type="submit" class="btn btn-primary" value="Create" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{/body}⁠⁠⁠⁠

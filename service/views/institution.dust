@@ -1,0 +1,39 @@
+{>"layout" /}
+
+{<body}
+    <br>
+    <div class="container row">
+        <div class="jumbotron col-sm-12 pull-center">
+            <form method="post" action="/addinst">
+                <div class="header">
+                    <h4>Welcome Institutions!</h4>
+                </div>
+                <br>
+                <br>
+                <div >
+                    <div class="form-group">
+                        <label>Institution Name</label>
+                        <input type="text" class="form-control" name="instname" required/>
+                    </div>
+                    <div class="form-group">
+                        <label>Topic Name</label>
+                        <input type="text" class="form-control" name="tname" required/>
+                    </div>
+                    <div class="form-group">
+                        <label>Course Name</label>
+                        <input type="text" class="form-control" name="cname" required/>
+                    </div>
+                    <div class="form-group">
+                        <label>URL</label>
+                        <input type="text" class="form-control" name="url" required/>
+                    </div>
+
+                </div>
+                <div class="form-group">
+                    <button type="button" class="btn btn-primary">Close</button>
+                    <input type="submit" class="btn btn-primary" value="Add Course" />
+                </div>
+            </form>
+        </div>
+    </div>
+{/body}
